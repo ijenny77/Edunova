@@ -5,6 +5,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 let path = require("path")
 
 let port = 3000
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname + "/index.html"))
